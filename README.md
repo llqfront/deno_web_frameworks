@@ -10,6 +10,9 @@ deno web  frameworks Fresh  Aleph  Ultra
 [新redux](https://cn.redux.js.org/usage/server-rendering)
 [redux-toolkit](https://redux-toolkit.js.org/)
 
+### recoiljs
+[recoiljs中文](https://www.recoiljs.cn/)
+[recoiljs](https://www.recoiljs.org)
 
 
 
