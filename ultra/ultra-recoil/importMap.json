@@ -1,14 +1,18 @@
 {
   "imports": {
-    "react": "https://esm.sh/react@18.2.0?dev",
-    "react/": "https://esm.sh/react@18.2.0/",
+    "ultra/": "https://deno.land/x/ultra@v2.2.1/",
     "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/server": "https://esm.sh/react-dom@18.2.0/server?dev",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
-
-    "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
+    "react-dom/server": "https://esm.sh/react-dom@18.2.0/server?dev",
     "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?external=react",
-
-    "ultra/": "https://deno.land/x/ultra@v2.2.1/"
+    "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0?dev",
+    "recoil": "https://esm.sh/v108/*recoil@0.7.6"
+  },
+  "scopes": {
+    "https://esm.sh/v108/": {
+      "hamt_plus": "https://esm.sh/v108/hamt_plus@1.0.2"
+    }
   }
 }
