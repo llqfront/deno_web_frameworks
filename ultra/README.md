@@ -25,7 +25,7 @@ Which query library do you want to use?
 (0) None (1) React Query 0
 ```
 
-#### redux
+
 ##### add Router.tsx
 ```tsx
 import { lazy, Suspense } from "react";
@@ -122,6 +122,130 @@ click
 check sitemap
 ```
 
+##### npm add
+
+```cmd
+https://esm.sh/
+deno run -A -r https://esm.sh init
+
+eg:
+
+# Adding packages
+deno task esm:add react react-dom     # add multiple packages
+deno task esm:add react@17.0.2        # specify version
+deno task esm:add react:preact/compat # using alias
+
+# Updating packages
+deno task esm:update react react-dom  # update specific packages
+deno task esm:update                  # update all packages
+
+# Removing packages
+deno task esm:remove react react-dom
+
+```
+
+
+
+#### redux  ultra-redux
+##### add redux
+```cmd
+deno run -A -r https://esm.sh init
+
+add @reduxjs/toolkit
+
+deno task esm:add @reduxjs/toolkit
+
+ultra/ultra-redux/importMap.json
+
+update importMap.json
+"react": "https://esm.sh/react@18.2.0?dev",
+"@reduxjs/toolkit": "https://esm.sh/v108/*@reduxjs/toolkit@1.9.3",
+"@reduxjs/toolkit/": "https://esm.sh/v108/*@reduxjs/toolkit@1.9.3/"
+
+use @reduxjs/toolkit/  query
+so add /
+"@reduxjs/toolkit/": "https://esm.sh/v108/*@reduxjs/toolkit@1.9.3/"
+
+
+add react-redux
+deno task esm:add react-redux
+no install
+so url add react-redux
+https://esm.sh/v108/   from @reduxjs/toolkit  https://esm.sh/v108/*@reduxjs/toolkit@1.9.3   https://esm.sh/v108/
+
+https://esm.sh/v108/react-redux@8.0.5
+
+add ?external=react
+https://esm.sh/v108/react-redux@8.0.5?external=react
+
+
+
+{
+  "imports": {
+    "ultra/": "https://deno.land/x/ultra@v2.2.1/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
+    "react-dom/server": "https://esm.sh/react-dom@18.2.0/server?dev",
+    "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?external=react",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0?dev",
+    "@reduxjs/toolkit": "https://esm.sh/v108/*@reduxjs/toolkit@1.9.3",
+    "@reduxjs/toolkit/": "https://esm.sh/v108/*@reduxjs/toolkit@1.9.3/",
+    "react-redux": "https://esm.sh/v108/react-redux@8.0.5?external=react"
+  },
+  "scopes": {
+    "https://esm.sh/v108/": {
+      "immer": "https://esm.sh/v108/immer@9.0.19",
+      "redux-thunk": "https://esm.sh/v108/redux-thunk@2.4.2",
+      "redux": "https://esm.sh/v108/redux@4.2.1",
+      "reselect": "https://esm.sh/v108/reselect@4.1.7"
+    }
+  }
+}
+
+````
+
+
+##### update root.tsx
+```tsx
+import React from "react";
+import Router from "./router.tsx";
+
+import { Provider } from 'react-redux';
+import { setupStore } from './stores/index.ts';
+const store = setupStore();
+
+const RootApp = () => {
+  return (
+      <Provider store={store}>
+        <Router />
+      </Provider>
+  );
+};
+export default RootApp;
+```
+
+##### add file
+```html
+features
+services
+stores
+```
+
+##### change view file
+```tsx
+demo/
+about/
+```
+##### start project
+```cmd
+deno task dev
+
+ok
+
+Access to development
+```
 
 
 
