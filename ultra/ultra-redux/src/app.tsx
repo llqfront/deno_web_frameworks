@@ -1,38 +1,22 @@
 import useAsset from "ultra/hooks/use-asset.js";
-
+import RootApp from "./root.tsx";
 export default function App() {
-  console.log("Hello world!");
+  // console.log("Hello world!");
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <title>Ultra</title>
+        <meta charSet="UTF-8" />
+        <meta name="renderer" content="webkit" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Deno Ultra</title>
+        <meta name="keywords" content="Deno Ultra" />
+        <meta name="description" content="Deno Ultra" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href={useAsset("/favicon.ico")} />
         <link rel="stylesheet" href={useAsset("/style.css")} />
       </head>
       <body>
-        <main>
-          <h1>
-            <span></span>__<span></span>
-          </h1>
-          <p>
-            Welcome to{" "}
-            <strong>Ultra</strong>. This is a barebones starter for your web
-            app.
-          </p>
-          <p>
-            Take{" "}
-            <a
-              href="https://ultrajs.dev/docs"
-              target="_blank"
-            >
-              this
-            </a>, you may need it where you are going. It will show you how to
-            customize your routing, data fetching, and styling with popular
-            libraries.
-          </p>
-        </main>
+        <RootApp />
       </body>
     </html>
   );
