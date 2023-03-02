@@ -32,5 +32,6 @@
       ]
     }
   },
+  "HTTPS_PROXY":"https://api.xhanglu.com/",
   "importMap": "./importMap.json"
 }
