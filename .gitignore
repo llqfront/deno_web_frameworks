@@ -5,7 +5,7 @@
 
 # Node artifact files
 node_modules/
-dist/
+
 
 # Compiled Java class files
 *.class
@@ -21,7 +21,7 @@ dist/
 
 # Maven
 target/
-dist/
+
 
 # JetBrains IDE
 .idea/
@@ -81,7 +81,7 @@ output
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 # Node artifact files
 node_modules/
-dist/
+ dist/
 # Compiled Java class files
 *.class
 # Compiled Python bytecode
@@ -92,7 +92,6 @@ dist/
 *.jar
 # Maven
 target/
-dist/
 # JetBrains IDE
 .idea/
 # Unit test reports
@@ -135,7 +134,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 # compiled output
-/dist
+
 /dist-server
 /tmp
 /out-tsc
