@@ -5,7 +5,10 @@ import React, { memo } from 'react';import {
   useRecoilState,
   useRecoilValue,
 } from "recoil";
-import { charCountState, textState } from "@/stores/index.ts";
+import { charCountState, textState } from "@/stores/index";
+import useHomeTest, { TestContext } from "@/hooks/useHome";
+
+import Child from './Child.tsx';
 interface Props {
 }
 // const textState = atom({
@@ -20,17 +23,17 @@ interface Props {
 //   },
 // });
 const View: React.FC = (props: Props) => {
-    const [text, setText] = useRecoilState(textState);
+    // const { text } = useRecoilValue(textState);
     const count = useRecoilValue(charCountState);
-    const onChange = (event) => {
-      setText(event.target.value);
-    };
+    const homeTest = useHomeTest();
     return (
       <React.Fragment>
           Home page
-          <input type="text" value={text} onChange={onChange} />
-          <br />
-          Echo: {text}
+          
+          <TestContext.Provider value={homeTest}>
+            <Child/>
+          </TestContext.Provider>
+          <br/>
           ----{count}
       </React.Fragment>
     )
