@@ -8,13 +8,13 @@ import React, { memo } from 'react';import {
 import { charCountState, textState } from "@/stores/index";
 import useHomeTest, { TestContext } from "@/hooks/useHome";
 
-import Child from './Child.tsx';
+import Child from './Child';
 interface Props {
 }
 // const textState = atom({
 //   key: "textState", // unique ID (with respect to other atoms/selectors)
 //   default: "", // default value (aka initial value)
-// });
+// }); 
 // const charCountState = selector({
 //   key: 'charCountState', // unique ID (with respect to other atoms/selectors)
 //   get: ({get}) => {

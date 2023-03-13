@@ -1,12 +1,16 @@
-import React, { createContent, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
+
+
+
 
 interface interContextProps {
-    test: string,
+    test: string;
+    setTest:(test: string)=>void;
 }
 
 export type TestContextProps = interContextProps;
 
-export const TestContext: React.Context<TestContextProps>  = React.createContext<TestContextProps>({} as TestContextProps);
+export const TestContext: React.Context<TestContextProps>  = createContext<TestContextProps>({} as TestContextProps);
 
 
 export default function useHomeTest():TestContextProps{

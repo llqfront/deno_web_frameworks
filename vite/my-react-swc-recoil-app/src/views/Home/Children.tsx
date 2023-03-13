@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Childrenren from './Childrenren.tsx';
+import Childrenren from './Childrenren';
 interface Props {
 }
 

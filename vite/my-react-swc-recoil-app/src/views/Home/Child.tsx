@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import Children from './Children.tsx';
-import Inp from "@/islands/Form/Inp.tsx";
+import Children from './Children';
+import Inp from "@/islands/Form/Inp";
 interface Props {
 }
 
