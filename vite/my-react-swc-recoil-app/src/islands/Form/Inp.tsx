@@ -5,20 +5,23 @@ import React, { memo,useContext,useReducer } from 'react';import {
   useRecoilState,
   useRecoilValue,
 } from "recoil";
-import { textState } from "@/stores/index.ts";
+import { textState } from "@/stores/index";
 import { TestContext } from "@/hooks/useHome";
 interface Props {
 }
 
 //	reducer 计数器
 const initialState = {count: 0};
+type ACTIONTYPE =
+  | { type: "increment"; payload: number }
+  | { type: "decrement"; payload: string };
 
-const reducer = (state, action) => {
+const reducer = ( state: typeof initialState, action: ACTIONTYPE ) => {
   switch (action.type) {
     case 'increment':
-      return {count: state.count + 1};
+      return {count: state.count + action.payload };
     case 'decrement':
-      return {count: state.count - 1};
+      return {count: state.count - Number(action.payload)};
     default:
       throw new Error();
   }
@@ -32,7 +35,7 @@ const IsLand: React.FC = (props: Props) => {
         setTest
     } = useContext(TestContext);
     const [text, setText] = useRecoilState(textState);
-    const onChange = (event) => {
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setText(event.target.value);
       setTest(event.target.value)
     };
@@ -42,8 +45,8 @@ const IsLand: React.FC = (props: Props) => {
 
 
         Count: {state.count}
-      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
-      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      <button onClick={() => dispatch({type: 'decrement', payload: "5" })}>-</button>
+      <button onClick={() => dispatch({type: 'increment', payload: 5 })}>+</button>
       </React.Fragment>
     )
 }

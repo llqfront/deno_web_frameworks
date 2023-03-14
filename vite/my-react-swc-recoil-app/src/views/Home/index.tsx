@@ -14,7 +14,7 @@ interface Props {
 // const textState = atom({
 //   key: "textState", // unique ID (with respect to other atoms/selectors)
 //   default: "", // default value (aka initial value)
-// }); 
+// });
 // const charCountState = selector({
 //   key: 'charCountState', // unique ID (with respect to other atoms/selectors)
 //   get: ({get}) => {
@@ -29,12 +29,19 @@ const View: React.FC = (props: Props) => {
     return (
       <React.Fragment>
           Home page
-          
+
           <TestContext.Provider value={homeTest}>
             <Child/>
           </TestContext.Provider>
           <br/>
           ----{count}
+          <ul>
+            <li>333</li>
+            <li>333</li>
+            <li>333</li>
+            <li>333</li>
+            <li>333</li>
+          </ul>
       </React.Fragment>
     )
 }

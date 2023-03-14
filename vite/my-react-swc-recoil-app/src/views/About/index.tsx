@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { atom, selector, selectorFamily, useRecoilState, useRecoilValue } from "recoil";
-import { charCountState, textState } from "@/stores/index.ts";
+import { charCountState, textState } from "@/stores/index";
 const userSelector = selectorFamily({
   key: 'user selector family',
-  get: (userId) => async () => {
+  get: (userId: string) => async () => {
     const response = await fetch(`/api/${userId}`);
     return await response.json()
   }

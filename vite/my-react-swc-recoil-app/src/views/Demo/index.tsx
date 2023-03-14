@@ -6,7 +6,7 @@ import {
   useRecoilState,
   useRecoilValue,
 } from "recoil";
-import { charCountState, textState } from "@/stores/index.ts";
+import { charCountState, textState } from "@/stores/index";
 interface Props {
 }
 const View: React.FC = (props: Props) => {
