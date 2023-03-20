@@ -9,7 +9,7 @@ import {
 import { charCountState, textState } from "@/stores/index";
 interface Props {
 }
-const View: React.FC = (props: Props) => {
+const View: React.FC<Props> = (props) => {
     const [text, setText] = useRecoilState(textState);
     const count = useRecoilValue(charCountState);
     return (

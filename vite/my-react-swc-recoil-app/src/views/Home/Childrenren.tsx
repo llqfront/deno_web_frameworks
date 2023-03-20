@@ -3,7 +3,7 @@ import { TestContext } from "@/hooks/useHome";
 interface Props {
 }
 
-const View: React.FC = (props: Props) => {
+const View: React.FC<Props> = (props) => {
     const {
         test
     } = useContext(TestContext);

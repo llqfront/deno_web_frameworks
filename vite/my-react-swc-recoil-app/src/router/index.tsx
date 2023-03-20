@@ -8,6 +8,8 @@ import { DefaultLayout } from "@/views/Layouts/";
 const Home = lazy(() => import('@/views/Home/'));
 const About = lazy(() => import('@/views/About/'));
 const Demo = lazy(() => import('@/views/Demo/'));
+const Ctx = lazy(() => import('@/views/Ctx/'));
+const EpCtx = lazy(() => import('@/views/EpCtx/'));
 const NotFound = lazy(() => import('@/views/NotFound'));
 
 const router = createBrowserRouter([
@@ -29,6 +31,16 @@ const router = createBrowserRouter([
         path: "demo",
         index: true,
         element: <Demo />,
+      },
+      {
+        path: "ctx",
+        index: true,
+        element: <Ctx />,
+      },
+      {
+        path: "epctx",
+        index: true,
+        element: <EpCtx />,
       },
     ],
   },

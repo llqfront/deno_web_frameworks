@@ -4,7 +4,7 @@ import Inp from "@/islands/Form/Inp";
 interface Props {
 }
 
-const View: React.FC = (props: Props) => {
+const View: React.FC<Props> = (props) => {
 
     return (
       <React.Fragment>

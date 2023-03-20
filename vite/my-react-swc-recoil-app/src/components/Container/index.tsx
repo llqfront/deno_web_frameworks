@@ -17,14 +17,14 @@ const Com: React.FC<Props> = (props) => {
   const kindChildData = ( data: any ) => {
     return data.map( ( item: any, index: number ) => {
       return (
-        <li 
+        <li
         key={index}
         onMouseOver={(e)=>{
           showPopList(e, item.page)
-        }} 
+        }}
         onMouseOut={hidePopList}
         >
-          <NavLink 
+          <NavLink
             end
             className={({ isActive }) =>
               isActive ? 'title active' : 'title'
@@ -57,7 +57,7 @@ const Com: React.FC<Props> = (props) => {
 
 
   const [popList, setPopList] = useState({
-    left: 120, 
+    left: 120,
     top: 0,
     display: 'none'
   });
@@ -89,7 +89,7 @@ const Com: React.FC<Props> = (props) => {
     });
   };
   const hidePopList = () => {
-    if (!timer.current) { 
+    if (!timer.current) {
       timer.current = setTimeout(()=>{
         setPopList((popList)=>{
           return {
@@ -110,7 +110,7 @@ const Com: React.FC<Props> = (props) => {
               {kindData()}
               {
                 /**
-                 * 
+                 *
                  * <ul>
                 <li onMouseOver={showPopList} onMouseOut={hidePopList}><NavLink exact to="/service/dashboard" className="title"><i className="iconfont icon-gailan1"></i>概览</NavLink></li>
                 <li onMouseOver={showPopList} onMouseOut={hidePopList}><NavLink to="login" className="title"><i className="iconfont icon-gailan1"></i>概览</NavLink></li>
@@ -164,7 +164,7 @@ const Com: React.FC<Props> = (props) => {
       </section>
       <PopBox
           ref={popRef}
-          popStyle={popList} 
+          popStyle={popList}
           showStopPopList={showStopPopList}
           hidePopList={hidePopList}
       />

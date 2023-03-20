@@ -22,7 +22,7 @@ interface Props {
 //     return text.length;
 //   },
 // });
-const View: React.FC = (props: Props) => {
+const View: React.FC<Props> = (props) => {
     // const { text } = useRecoilValue(textState);
     const count = useRecoilValue(charCountState);
     const homeTest = useHomeTest();

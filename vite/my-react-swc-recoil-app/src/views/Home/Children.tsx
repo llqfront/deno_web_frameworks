@@ -3,7 +3,7 @@ import Childrenren from './Childrenren';
 interface Props {
 }
 
-const View: React.FC = (props: Props) => {
+const View: React.FC<Props> = (props) => {
 
     return (
       <React.Fragment>
